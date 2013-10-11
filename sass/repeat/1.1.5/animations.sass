@@ -1,0 +1,219 @@
+@import "compass/css3/transform"
+@import "compass/css3/transition"
+
+.at-repeat-grow-in, .at-repeat-grow-out
+  @include transition(all 600ms ease)
+  @include transform-origin(50% 50%)
+
+.at-repeat-grow-in
+  @include scale(0.01)
+
+.at-repeat-grow-out-active
+  @include scale(0.01)
+
+.at-repeat-grow-in-active
+  @include scale(1)
+
+
+
+
+
+.at-repeat-wave-in, .at-repeat-wave-out
+  @include transition-property(all)
+  @include transition-duration(600ms)
+  @include transition-timing-function(cubic-bezier(0.260, 0.860, 0.440, 0.985))
+
+.at-repeat-wave-out
+  opacity: 1
+
+.at-repeat-wave-in
+  @include translateX(-70%)
+  opacity: 0
+
+.at-repeat-wave-out-active
+  @include translateX(-70%)
+  opacity: 0
+
+.at-repeat-wave-in-active
+  @include translateX(0)
+  opacity: 1
+
+
+
+
+
+
+.at-repeat-fan-in, .at-repeat-fan-out
+  @include transition-property(all)
+  @include transition-duration(400ms)
+  @include transition-timing-function(cubic-bezier(0.390, 0.575, 0.565, 1.000))
+
+.at-repeat-fan-in
+  @include rotate(-60deg)
+  @include transform-origin(0, 50%, 0, 0)
+  opacity: 0
+
+.at-repeat-fan-in-active
+  @include rotate(0deg)
+  opacity: 1
+
+.at-repeat-fan-out
+  @include rotate(0deg)
+  @include transform-origin(0, 100%, 0, 0)
+  opacity: 1
+
+.at-repeat-fan-out-active
+  @include rotate(70deg)
+  opacity: 0
+
+
+
+
+
+
+
+.at-repeat-fade-in, .at-repeat-fade-out
+  @include transition-property(opacity)
+  @include transition-duration(300ms)
+
+.at-repeat-fade-in
+  opacity: 0
+
+.at-repeat-fade-in-active
+  opacity: 1
+
+.at-repeat-fade-out
+  opacity: 1
+
+.at-repeat-fade-out-active
+  opacity: 0
+
+
+
+
+
+.at-repeat-flip-out-horizontal
+  @include rotateX(0deg)
+  @include backface-visibility(hidden)
+  @include transition-property(transform)
+  @include transition-duration(.4s)
+  @include transform-origin(center center)
+  z-index: 20
+
+.at-repeat-flip-out-horizontal-active
+  @include rotateX(90deg)
+  z-index: 10
+
+.at-repeat-flip-in-horizontal
+  @include rotateX(-90deg)
+  @include backface-visibility(hidden)
+  @include transition-property(transform)
+  @include transition-duration(.4s)
+  @include transform-origin(center center)
+  z-index: 10
+
+.at-repeat-flip-in-horizontal-active
+  @include rotateX(0deg)
+  z-index: 20
+
+
+
+
+
+
+.at-repeat-flip-out-vertical
+  @include rotateY(0deg)
+  @include backface-visibility(hidden)
+  @include transition-property(transform)
+  @include transition-duration(.4s)
+  @include transform-origin(center center)
+  z-index: 20
+
+.at-repeat-flip-out-vertical-active
+  @include rotateY(90deg)
+  z-index: 10
+
+.at-repeat-flip-in-vertical
+  @include rotateY(-90deg)
+  @include backface-visibility(hidden)
+  @include transition-property(transform)
+  @include transition-duration(.4s)
+  @include transform-origin(center center)
+  z-index: 10
+
+.at-repeat-flip-in-vertical-active
+  @include rotateY(0deg)
+  z-index: 20
+
+
+
+
+
+
+
+
+
+.at-repeat-twirl-in, .at-repeat-twirl-out
+  @include transition(all 600ms ease, opacity 200ms ease)
+  @include transform-origin(50% 50% 0 0)
+
+.at-repeat-twirl-in
+  @include rotate3d(80, -70, 10, 180deg)
+  opacity: 0
+
+.at-repeat-twirl-in-active
+  @include rotate3d(0, 0, 0, 0deg)
+  opacity: 1
+
+.at-repeat-twirl-out
+  @include rotate3d(0, 0, 0, 0deg)
+  opacity: 1
+
+.at-repeat-twirl-out-active
+  @include rotate3d(80, 70, 10, -180deg)
+  opacity: 0
+
+
+
+
+
+.at-repeat-fly-reverse-out, .at-repeat-fly-reverse-in
+  @include transition(all 600ms ease, opacity 300ms ease)
+  @include transform-origin(50% 50% -50px 0)
+
+.at-repeat-fly-reverse-out
+  opacity: 1
+
+.at-repeat-fly-reverse-out-active
+  @include rotateX(-180deg)
+  opacity: 0
+
+.at-repeat-fly-reverse-in
+  @include rotateX(180deg)
+  opacity: 0
+
+.at-repeat-fly-reverse-in-active
+  @include rotateX(0deg)
+  opacity: 1
+
+
+
+
+.at-repeat-macro-in, .at-repeat-macro-out
+  @include transition(all 600ms ease, opacity 200ms ease)
+  @include transform-origin(50% 50% 0 0)
+
+.at-repeat-macro-in
+  @include scale(2.5)
+  opacity: 0
+
+.at-repeat-macro-in-active
+  @include scale(1)
+  opacity: 1
+
+.at-repeat-macro-out
+  opacity: 1
+
+.at-repeat-macro-out-active
+  @include scale(2.5)
+  opacity: 0

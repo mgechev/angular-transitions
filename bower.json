@@ -1,0 +1,25 @@
+{
+  "name": "Angular-Transitions",
+  "version": "0.0.0",
+  "authors": [
+    "Minko Gechev @mgechev"
+  ],
+  "description": "A pre-defined set of transitions for AngularJS application",
+  "license": "MIT",
+  "homepage": "http://angular-transitions.mgechev.com/",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+	"dependencies": {
+    "jquery": "2.0.3",
+		"bootstrap": "3.0.0",
+		"angularjs": "https://ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.min.js",
+    "angular-ui-select2": "~0.0.2",
+    "select2": "~3.4.3",
+		"angular-ui-router": "0.2.0"
+	}
+}

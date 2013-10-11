@@ -1,0 +1,20 @@
+<div class="controls">
+	<button class="btn btn-success" ng-click="addItem()">Add</button>
+	<button class="btn btn-danger" ng-click="removeItem()">Remove</button>
+
+	<select ui-select2 ng-model="current" data-placeholder="Choose animation" style="width: 200px;">
+		<option value=""></option>
+		<option value="{{animation.value}}" ng-repeat="animation in animations">{{animation.name}}</option>
+	</select>
+</div>
+<div class="container-liquid">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3 panel panel-default">
+			<br><br>
+			<ul class="list-group demo-list">
+				<li class="list-group-item" ng-animate="getAnimation()" ng-repeat="el in collection" ng-bind="el"></li>
+			</ul>
+			<br><br>
+        </div>
+    </div>
+</div>

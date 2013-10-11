@@ -1,0 +1,219 @@
+@import "compass/css3/transform"
+@import "compass/css3/transition"
+
+.at-repeat-grow.ng-enter, .at-repeat-grow.ng-leave
+  @include transition(all 600ms ease)
+  @include transform-origin(50% 50%)
+
+.at-repeat-grow.ng-enter
+  @include scale(0.01)
+
+.at-repeat-grow.ng-leave-active
+  @include scale(0.01)
+
+.at-repeat-grow.ng-enter-active
+  @include scale(1)
+
+
+
+
+
+.at-repeat-wave.ng-enter, .at-repeat-wave.ng-leave
+  @include transition-property(all)
+  @include transition-duration(600ms)
+  @include transition-timing-function(cubic-bezier(0.260, 0.860, 0.440, 0.985))
+
+.at-repeat-wave.ng-leave
+  opacity: 1
+
+.at-repeat-wave.ng-enter
+  @include translateX(-70%)
+  opacity: 0
+
+.at-repeat-wave.ng-leave-active
+  @include translateX(-70%)
+  opacity: 0
+
+.at-repeat-wave.ng-enter-active
+  @include translateX(0)
+  opacity: 1
+
+
+
+
+
+
+.at-repeat-fan.ng-enter, .at-repeat-fan.ng-leave
+  @include transition-property(all)
+  @include transition-duration(400ms)
+  @include transition-timing-function(cubic-bezier(0.390, 0.575, 0.565, 1.000))
+
+.at-repeat-fan.ng-enter
+  @include rotate(-60deg)
+  @include transform-origin(0, 50%, 0, 0)
+  opacity: 0
+
+.at-repeat-fan.ng-enter-active
+  @include rotate(0deg)
+  opacity: 1
+
+.at-repeat-fan.ng-leave
+  @include rotate(0deg)
+  @include transform-origin(0, 100%, 0, 0)
+  opacity: 1
+
+.at-repeat-fan.ng-leave-active
+  @include rotate(70deg)
+  opacity: 0
+
+
+
+
+
+
+
+.at-repeat-fade.ng-enter, .at-repeat-fade.ng-leave
+  @include transition-property(opacity)
+  @include transition-duration(300ms)
+
+.at-repeat-fade.ng-enter
+  opacity: 0
+
+.at-repeat-fade.ng-enter-active
+  opacity: 1
+
+.at-repeat-fade.ng-leave
+  opacity: 1
+
+.at-repeat-fade.ng-leave-active
+  opacity: 0
+
+
+
+
+
+.at-repeat-flip-horizontal.ng-leave
+  @include rotateX(0deg)
+  @include backface-visibility(hidden)
+  @include transition-property(transform)
+  @include transition-duration(.4s)
+  @include transform-origin(center center)
+  z-index: 20
+
+.at-repeat-flip-horizontal.ng-leave-active
+  @include rotateX(90deg)
+  z-index: 10
+
+.at-repeat-flip-horizontal.ng-enter
+  @include rotateX(-90deg)
+  @include backface-visibility(hidden)
+  @include transition-property(transform)
+  @include transition-duration(.4s)
+  @include transform-origin(center center)
+  z-index: 10
+
+.at-repeat-flip-horizontal.ng-enter-active
+  @include rotateX(0deg)
+  z-index: 20
+
+
+
+
+
+
+.at-repeat-flip-vertical.ng-leave
+  @include rotateY(0deg)
+  @include backface-visibility(hidden)
+  @include transition-property(transform)
+  @include transition-duration(.4s)
+  @include transform-origin(center center)
+  z-index: 20
+
+.at-repeat-flip-vertical.ng-leave-active
+  @include rotateY(90deg)
+  z-index: 10
+
+.at-repeat-flip-vertical.ng-enter
+  @include rotateY(-90deg)
+  @include backface-visibility(hidden)
+  @include transition-property(transform)
+  @include transition-duration(.4s)
+  @include transform-origin(center center)
+  z-index: 10
+
+.at-repeat-flip-vertical.ng-enter-active
+  @include rotateY(0deg)
+  z-index: 20
+
+
+
+
+
+
+
+
+
+.at-repeat-twirl.ng-enter, .at-repeat-twirl.ng-leave
+  @include transition(all 600ms ease, opacity 200ms ease)
+  @include transform-origin(50% 50% 0 0)
+
+.at-repeat-twirl.ng-enter
+  @include rotate3d(80, -70, 10, 180deg)
+  opacity: 0
+
+.at-repeat-twirl.ng-enter-active
+  @include rotate3d(0, 0, 0, 0deg)
+  opacity: 1
+
+.at-repeat-twirl.ng-leave
+  @include rotate3d(0, 0, 0, 0deg)
+  opacity: 1
+
+.at-repeat-twirl.ng-leave-active
+  @include rotate3d(80, 70, 10, -180deg)
+  opacity: 0
+
+
+
+
+
+.at-repeat-fly-reverse.ng-enter, .at-repeat-fly-reverse.ng-leave
+  @include transition(all 600ms ease, opacity 300ms ease)
+  @include transform-origin(50% 50% -50px 0)
+
+.at-repeat-fly-reverse.ng-leave
+  opacity: 1
+
+.at-repeat-fly-reverse.ng-leave-active
+  @include rotateX(-180deg)
+  opacity: 0
+
+.at-repeat-fly-reverse.ng-enter
+  @include rotateX(180deg)
+  opacity: 0
+
+.at-repeat-fly-reverse.ng-enter-active
+  @include rotateX(0deg)
+  opacity: 1
+
+
+
+
+.at-repeat-macro.ng-enter, .at-repeat-macro.ng-leave
+  @include transition(all 600ms ease, opacity 200ms ease)
+  @include transform-origin(50% 50% 0 0)
+
+.at-repeat-macro.ng-enter
+  @include scale(2.5)
+  opacity: 0
+
+.at-repeat-macro.ng-enter-active
+  @include scale(1)
+  opacity: 1
+
+.at-repeat-macro.ng-leave
+  opacity: 1
+
+.at-repeat-macro.ng-leave-active
+  @include scale(2.5)
+  opacity: 0

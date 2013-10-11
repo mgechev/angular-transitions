@@ -1,0 +1,10 @@
+<div class="controls">
+	Select animation: <select ui-select2 ng-model="current" data-placeholder="Choose animation" style="width: 200px;">
+		<option value=""></option>
+		<option value="{{animation.value}}" ng-repeat="animation in animations">{{animation.name}}</option>
+	</select>
+	<button class="btn btn-default" ng-click="toggle()">Toggle Pages</button>
+</div>
+<div ui-view ng-animate="getAnimation()" class="main-wrapper">
+
+</div>

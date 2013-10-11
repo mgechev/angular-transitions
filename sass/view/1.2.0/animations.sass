@@ -1,0 +1,303 @@
+@import "compass/css3/transform"
+@import "compass/css3/transition"
+
+.at-view-flip-horizontal.ng-leave
+  @include rotateX(0deg)
+  @include backface-visibility(hidden)
+  @include transition-property(transform)
+  @include transition-duration(.5s)
+  @include transform-origin(center center)
+  position: absolute
+  top: 0px
+  left: 0px
+  z-index: 20
+
+.at-view-flip-horizontal.ng-leave-active
+  @include rotateX(180deg)
+  z-index: 10
+
+.at-view-flip-horizontal.ng-enter
+  @include rotateX(-180deg)
+  @include backface-visibility(hidden)
+  @include transition-property(transform)
+  @include transition-duration(.5s)
+  @include transform-origin(center center)
+  position: absolute
+  top: 0px
+  left: 0px
+  z-index: 10
+
+.at-view-flip-horizontal.ng-enter-active
+  @include rotateX(0deg)
+  z-index: 20
+
+
+
+
+.at-view-flip-vertical.ng-leave
+  @include rotateY(0deg)
+  @include backface-visibility(hidden)
+  @include transition-property(transform)
+  @include transition-duration(.5s)
+  @include transform-origin(center center)
+  position: absolute
+  top: 0px
+  left: 0px
+  z-index: 20
+
+.at-view-flip-vertical.ng-leave-active
+  @include rotateY(180deg)
+  z-index: 10
+
+.at-view-flip-vertical.ng-enter
+  @include rotateY(-180deg)
+  @include backface-visibility(hidden)
+  @include transition-property(transform)
+  @include transition-duration(.5s)
+  @include transform-origin(center center)
+  position: absolute
+  top: 0px
+  left: 0px
+  z-index: 10
+
+.at-view-flip-vertical.ng-enter-active
+  @include rotateX(0deg)
+  z-index: 20
+
+
+
+
+.at-view-fade.ng-enter
+  @include transition-property(opacity)
+  @include transition-duration(0.5s)
+  position: absolute
+  top: 0px
+  left: 0px
+  opacity: 0
+
+.at-view-fade.ng-enter-active
+  opacity: 1
+
+
+.at-view-fade.ng-leave
+  @include transition-property(opacity)
+  @include transition-duration(0.5s)
+  position: absolute
+  top: 0px
+  left: 0px
+  opacity: 1
+
+.at-view-fade.ng-leave-active
+  opacity: 0
+
+
+
+
+
+.at-view-slide-left.ng-leave
+  @include transition-property(transform, opacity)
+  @include transition-duration(.5s)
+  @include translate(0px, 0px)
+  opacity: 1
+  z-index: 3
+  position: absolute
+
+.at-view-slide-left.ng-leave-active
+  @include translate(-100%, 0px)
+  opacity: 0
+  position: absolute
+
+.at-view-slide-left.ng-enter
+  @include transition-property(transform, opacity)
+  @include transition-duration(.5s)
+  @include translate(-100%, 0px)
+  opacity: 0
+  z-index: 1
+  position: absolute
+
+.at-view-slide-left.ng-enter-active
+  @include translate(0px, 0px)
+  opacity: 1
+  position: absolute
+
+
+
+
+
+.at-view-slide-right.ng-enter
+  @include transition-property(transform, opacity)
+  @include transition-duration(.5s)
+  @include translate(100%, 0px)
+  opacity: 0
+  z-index: 1
+  position: absolute
+
+.at-view-slide-right.ng-enter-active
+  @include translate(0px, 0px)
+  opacity: 1
+  position: absolute
+
+.at-view-slide-right.ng-leave
+  @include transition-property(transform, opacity)
+  @include transition-duration(.5s)
+  @include translate(0px, 0px)
+  opacity: 1
+  z-index: 3
+  position: absolute
+
+.at-view-slide-right.ng-leave-active
+  @include translate(100%, 0px)
+  opacity: 0
+
+
+
+
+.at-view-slide-top.ng-enter
+  @include transition-property(transform, opacity)
+  @include transition-duration(.5s)
+  @include translate(0px, -100%)
+  opacity: 0
+  z-index: 1
+  position: absolute
+
+.at-view-slide-top.ng-enter-active
+  @include translate(0px, 0px)
+  opacity: 1
+  position: absolute
+
+.at-view-slide-top.ng-leave
+  @include transition-property(transform, opacity)
+  @include transition-duration(.5s)
+  @include translate(0px, 0px)
+  opacity: 1
+  z-index: 3
+  position: absolute
+
+.at-view-slide-top.ng-leave-active
+  @include translate(0px, -100%)
+  opacity: 0
+
+
+
+
+.at-view-slide-bottom.ng-enter
+  @include transition-property(transform, opacity)
+  @include transition-duration(.5s)
+  @include translate(0px, 100%)
+  opacity: 0
+  z-index: 1
+  position: absolute
+
+.at-view-slide-bottom.ng-enter-active
+  @include translate(0px, 0px)
+  opacity: 1
+  position: absolute
+
+.at-view-slide-bottom.ng-leave
+  @include transition-property(transform, opacity)
+  @include transition-duration(.5s)
+  @include translate(0px, 0px)
+  opacity: 1
+  z-index: 3
+  position: absolute
+
+.at-view-slide-bottom.ng-leave-active
+  @include translate(0px, 100%)
+  opacity: 0
+
+
+
+
+
+
+
+.at-view-rotate-fade.ng-leave
+  @include transition-property(transform, opacity)
+  @include transition-duration(.5s)
+  @include transform-origin(40% 0 0 0)
+  opacity: 1
+  position: absolute
+
+.at-view-rotate-fade.ng-leave-active
+  @include rotateZ(90deg)
+  opacity: 0
+  position: absolute
+
+
+
+
+
+
+.at-view-flip-right.ng-leave
+  @include rotateY(0deg)
+  @include backface-visibility(hidden)
+  @include transition-property(transform, opacity)
+  @include transition-duration(.5s)
+  @include transform-origin(100% 50% 0 0)
+  position: absolute
+  top: 0px
+  left: 0px
+  opacity: 1
+
+.at-view-flip-right.ng-leave-active
+  @include rotateY(90deg)
+  opacity: 0
+
+
+
+
+
+
+
+.at-view-flip-right-opposite.ng-leave
+  @include rotateY(0deg)
+  @include backface-visibility(hidden)
+  @include transition-property(transform, opacity)
+  @include transition-duration(.5s)
+  @include transform-origin(100% 50% 0 0)
+  position: absolute
+  top: 0px
+  left: 0px
+  opacity: 1
+
+.at-view-flip-right-opposite.ng-leave-active
+  @include rotateY(-90deg)
+  opacity: 0
+
+
+
+
+
+
+
+.at-view-dive.ng-leave
+  @include transition-property(opacity transform)
+  @include transition-duration(0.8s)
+  @include transition-delay(0.1s)
+  @include transform(rotateX(-60deg) translate(0, 200%))
+  opacity: 0
+  z-index: 4
+  position: absolute
+  top: 0px
+  left: 0px
+
+
+.at-view-dive.ng-leave-active
+  @include transform(rotateX(0deg) translate(0, 0))
+  opacity: 1
+
+
+
+
+
+
+.at-view-scale.ng-leave
+  @include transition-property(transform)
+  @include transition-duration(0.5s)
+  position: absolute
+  top: 0px
+  left: 0px
+  z-index: 2
+
+.at-view-scale.ng-leave-active
+  @include scale(0.1)

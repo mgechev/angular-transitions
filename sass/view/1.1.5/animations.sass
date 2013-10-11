@@ -1,0 +1,301 @@
+@import "compass/css3/transform"
+@import "compass/css3/transition"
+
+.at-view-flip-out-horizontal
+  @include rotateX(0deg)
+  @include backface-visibility(hidden)
+  @include transition-property(transform)
+  @include transition-duration(.5s)
+  @include transform-origin(center center)
+  position: absolute
+  top: 0px
+  left: 0px
+  z-index: 20
+
+.at-view-flip-out-horizontal-active
+  @include rotateX(180deg)
+  z-index: 10
+
+.at-view-flip-in-horizontal
+  @include rotateX(-180deg)
+  @include backface-visibility(hidden)
+  @include transition-property(transform)
+  @include transition-duration(.5s)
+  @include transform-origin(center center)
+  position: absolute
+  top: 0px
+  left: 0px
+  z-index: 10
+
+.at-view-flip-in-horizontal-active
+  @include rotateX(0deg)
+  z-index: 20
+
+
+
+
+.at-view-flip-out-vertical
+  @include rotateY(0deg)
+  @include backface-visibility(hidden)
+  @include transition-property(transform)
+  @include transition-duration(.5s)
+  @include transform-origin(center center)
+  position: absolute
+  top: 0px
+  left: 0px
+  z-index: 20
+
+.at-view-flip-out-vertical-active
+  @include rotateY(180deg)
+  z-index: 10
+
+.at-view-flip-in-vertical
+  @include rotateY(-180deg)
+  @include backface-visibility(hidden)
+  @include transition-property(transform)
+  @include transition-duration(.5s)
+  @include transform-origin(center center)
+  position: absolute
+  top: 0px
+  left: 0px
+  z-index: 10
+
+.at-view-flip-in-vertical-active
+  @include rotateX(0deg)
+  z-index: 20
+
+
+.at-view-fade-in
+  @include transition-property(opacity)
+  @include transition-duration(0.5s)
+  position: absolute
+  top: 0px
+  left: 0px
+  opacity: 0
+
+.at-view-fade-in-active
+  opacity: 1
+
+
+.at-view-fade-out
+  @include transition-property(opacity)
+  @include transition-duration(0.5s)
+  position: absolute
+  top: 0px
+  left: 0px
+  opacity: 1
+
+.at-view-fade-out-active
+  opacity: 0
+
+
+
+
+
+.at-view-slide-out-left
+  @include transition-property(transform, opacity)
+  @include transition-duration(.5s)
+  @include translate(0px, 0px)
+  opacity: 1
+  z-index: 3
+  position: absolute
+
+.at-view-slide-out-left-active
+  @include translate(-100%, 0px)
+  opacity: 0
+  position: absolute
+
+.at-view-slide-in-left
+  @include transition-property(transform, opacity)
+  @include transition-duration(.5s)
+  @include translate(-100%, 0px)
+  opacity: 0
+  z-index: 1
+  position: absolute
+
+.at-view-slide-in-left-active
+  @include translate(0px, 0px)
+  opacity: 1
+  position: absolute
+
+
+
+
+
+.at-view-slide-in-right
+  @include transition-property(transform, opacity)
+  @include transition-duration(.5s)
+  @include translate(100%, 0px)
+  opacity: 0
+  z-index: 1
+  position: absolute
+
+.at-view-slide-in-right-active
+  @include translate(0px, 0px)
+  opacity: 1
+  position: absolute
+
+.at-view-slide-out-right
+  @include transition-property(transform, opacity)
+  @include transition-duration(.5s)
+  @include translate(0px, 0px)
+  opacity: 1
+  z-index: 3
+  position: absolute
+
+.at-view-slide-out-right-active
+  @include translate(100%, 0px)
+  opacity: 0
+
+
+
+
+.at-view-slide-in-top
+  @include transition-property(transform, opacity)
+  @include transition-duration(.5s)
+  @include translate(0px, -100%)
+  opacity: 0
+  z-index: 1
+  position: absolute
+
+.at-view-slide-in-top-active
+  @include translate(0px, 0px)
+  opacity: 1
+  position: absolute
+
+.at-view-slide-out-top
+  @include transition-property(transform, opacity)
+  @include transition-duration(.5s)
+  @include translate(0px, 0px)
+  opacity: 1
+  z-index: 3
+  position: absolute
+
+.at-view-slide-out-top-active
+  @include translate(0px, -100%)
+  opacity: 0
+
+
+
+
+.at-view-slide-in-bottom
+  @include transition-property(transform, opacity)
+  @include transition-duration(.5s)
+  @include translate(0px, 100%)
+  opacity: 0
+  z-index: 1
+  position: absolute
+
+.at-view-slide-in-bottom-active
+  @include translate(0px, 0px)
+  opacity: 1
+  position: absolute
+
+.at-view-slide-out-bottom
+  @include transition-property(transform, opacity)
+  @include transition-duration(.5s)
+  @include translate(0px, 0px)
+  opacity: 1
+  z-index: 3
+  position: absolute
+
+.at-view-slide-out-bottom-active
+  @include translate(0px, 100%)
+  opacity: 0
+
+
+
+
+
+
+
+.at-view-rotate-fade-out
+  @include transition-property(transform, opacity)
+  @include transition-duration(.5s)
+  @include transform-origin(40% 0 0 0)
+  opacity: 1
+  position: absolute
+
+.at-view-rotate-fade-out-active
+  @include rotateZ(90deg)
+  opacity: 0
+  position: absolute
+
+
+
+
+
+
+.at-view-flip-out-right
+  @include rotateY(0deg)
+  @include backface-visibility(hidden)
+  @include transition-property(transform, opacity)
+  @include transition-duration(.5s)
+  @include transform-origin(100% 50% 0 0)
+  position: absolute
+  top: 0px
+  left: 0px
+  opacity: 1
+
+.at-view-flip-out-right-active
+  @include rotateY(90deg)
+  opacity: 0
+
+
+
+
+
+
+
+.at-view-flip-out-right-opposite
+  @include rotateY(0deg)
+  @include backface-visibility(hidden)
+  @include transition-property(transform, opacity)
+  @include transition-duration(.5s)
+  @include transform-origin(100% 50% 0 0)
+  position: absolute
+  top: 0px
+  left: 0px
+  opacity: 1
+
+.at-view-flip-out-right-opposite-active
+  @include rotateY(-90deg)
+  opacity: 0
+
+
+
+
+
+
+
+.at-view-dive-out
+  @include transition-property(opacity transform)
+  @include transition-duration(0.8s)
+  @include transition-delay(0.1s)
+  @include transform(rotateX(-60deg) translate(0, 200%))
+  opacity: 0
+  z-index: 4
+  position: absolute
+  top: 0px
+  left: 0px
+
+
+.at-view-dive-out-active
+  @include transform(rotateX(0deg) translate(0, 0))
+  opacity: 1
+
+
+
+
+
+
+.at-view-scale-out
+  @include transition-property(transform)
+  @include transition-duration(0.5s)
+  position: absolute
+  top: 0px
+  left: 0px
+  z-index: 2
+
+.at-view-scale-out-active
+  @include scale(0.1)
