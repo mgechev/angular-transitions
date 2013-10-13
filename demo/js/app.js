@@ -64,7 +64,7 @@ angular.module('angular-transitions', ['ui.select2', 'ui.router'])
     }
   },
   {
-    name: 'Dive out and scale',
+    name: 'Emerge and scale',
     value: {
       enter: 'at-view-emerge',
       leave: 'at-view-scale-out'
