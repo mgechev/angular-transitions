@@ -6,7 +6,7 @@
   @include backface-visibility(hidden)
   @include transition-property(transform)
   @include transition-duration(.5s)
-  @include transform-origin(center center)
+  @include transform-origin(center, center)
   position: absolute
   top: 0px
   left: 0px
@@ -21,7 +21,7 @@
   @include backface-visibility(hidden)
   @include transition-property(transform)
   @include transition-duration(.5s)
-  @include transform-origin(center center)
+  @include transform-origin(center, center)
   position: absolute
   top: 0px
   left: 0px
@@ -39,7 +39,7 @@
   @include backface-visibility(hidden)
   @include transition-property(transform)
   @include transition-duration(.5s)
-  @include transform-origin(center center)
+  @include transform-origin(center, center)
   position: absolute
   top: 0px
   left: 0px
@@ -54,7 +54,7 @@
   @include backface-visibility(hidden)
   @include transition-property(transform)
   @include transition-duration(.5s)
-  @include transform-origin(center center)
+  @include transform-origin(center, center)
   position: absolute
   top: 0px
   left: 0px
@@ -214,7 +214,7 @@
 .at-view-rotate-fade.ng-leave
   @include transition-property(transform, opacity)
   @include transition-duration(.5s)
-  @include transform-origin(40% 0 0 0)
+  @include transform-origin(40%, 0)
   opacity: 1
   position: absolute
 
@@ -233,7 +233,7 @@
   @include backface-visibility(hidden)
   @include transition-property(transform, opacity)
   @include transition-duration(.5s)
-  @include transform-origin(100% 50% 0 0)
+  @include transform-origin(100%, 50%)
   position: absolute
   top: 0px
   left: 0px
@@ -254,7 +254,7 @@
   @include backface-visibility(hidden)
   @include transition-property(transform, opacity)
   @include transition-duration(.5s)
-  @include transform-origin(100% 50% 0 0)
+  @include transform-origin(100%, 50%)
   position: absolute
   top: 0px
   left: 0px
@@ -309,7 +309,7 @@
 .at-view-scale.ng-enter
   @include transition-property(opacity, transform)
   @include transition-duration(0.5s)
-  @include transform-origin(50% 50% 50% 50%)
+  @include transform-origin(50%, 50%)
   @include scale(0.0)
   opacity: 0
 

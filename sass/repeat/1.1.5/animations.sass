@@ -3,7 +3,7 @@
 
 .at-repeat-grow-in, .at-repeat-grow-out
   @include transition(all 600ms ease)
-  @include transform-origin(50% 50%)
+  @include transform-origin(50%, 50%)
 
 .at-repeat-grow-in
   @include scale(0.01)
@@ -50,7 +50,7 @@
 
 .at-repeat-fan-in
   @include rotate(-60deg)
-  @include transform-origin(0, 50%, 0, 0)
+  @include transform-origin(0, 50%)
   opacity: 0
 
 .at-repeat-fan-in-active
@@ -59,7 +59,7 @@
 
 .at-repeat-fan-out
   @include rotate(0deg)
-  @include transform-origin(0, 100%, 0, 0)
+  @include transform-origin(0, 100%)
   opacity: 1
 
 .at-repeat-fan-out-active
@@ -97,7 +97,7 @@
   @include backface-visibility(hidden)
   @include transition-property(transform)
   @include transition-duration(.4s)
-  @include transform-origin(center center)
+  @include transform-origin(center, center)
   z-index: 20
 
 .at-repeat-flip-out-horizontal-active
@@ -109,7 +109,7 @@
   @include backface-visibility(hidden)
   @include transition-property(transform)
   @include transition-duration(.4s)
-  @include transform-origin(center center)
+  @include transform-origin(center, center)
   z-index: 10
 
 .at-repeat-flip-in-horizontal-active
@@ -126,7 +126,7 @@
   @include backface-visibility(hidden)
   @include transition-property(transform)
   @include transition-duration(.4s)
-  @include transform-origin(center center)
+  @include transform-origin(center, center)
   z-index: 20
 
 .at-repeat-flip-out-vertical-active
@@ -138,7 +138,7 @@
   @include backface-visibility(hidden)
   @include transition-property(transform)
   @include transition-duration(.4s)
-  @include transform-origin(center center)
+  @include transform-origin(center, center)
   z-index: 10
 
 .at-repeat-flip-in-vertical-active
@@ -155,7 +155,7 @@
 
 .at-repeat-twirl-in, .at-repeat-twirl-out
   @include transition(all 600ms ease, opacity 200ms ease)
-  @include transform-origin(50% 50% 0 0)
+  @include transform-origin(50%, 50%)
 
 .at-repeat-twirl-in
   @include rotate3d(80, -70, 10, 180deg)
@@ -179,7 +179,7 @@
 
 .at-repeat-fly-reverse-out, .at-repeat-fly-reverse-in
   @include transition(all 600ms ease, opacity 300ms ease)
-  @include transform-origin(50% 50% -50px 0)
+  @include transform-origin(50%, 50%, -50px, 0)
 
 .at-repeat-fly-reverse-out
   opacity: 1
@@ -201,7 +201,7 @@
 
 .at-repeat-macro-in, .at-repeat-macro-out
   @include transition(all 600ms ease, opacity 200ms ease)
-  @include transform-origin(50% 50% 0 0)
+  @include transform-origin(50%, 50%, 0, 0)
 
 .at-repeat-macro-in
   @include scale(2.5)
