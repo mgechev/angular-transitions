@@ -6,3 +6,5 @@ You can see how you can use them in [v1.4](http://code.angularjs.org/1.1.4/docs/
 
 This repository contains a set of pre-defined AngularJS animations which you can just copy and paste in your project. Both 1.1.5 and 1.2 APIs are supported (so you can use them with ui-view too).
 You can see a **[demo here](http://angular-transitions.mgechev.com/)**.
+
+Some of the animations are inspired by [scroll.js](http://lab.hakim.se/scroll-effects/).
