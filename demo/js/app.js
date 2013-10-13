@@ -66,7 +66,7 @@ angular.module('angular-transitions', ['ui.select2', 'ui.router'])
   {
     name: 'Dive out and scale',
     value: {
-      enter: 'at-view-dive-out',
+      enter: 'at-view-emerge',
       leave: 'at-view-scale-out'
     }
   },
@@ -75,6 +75,13 @@ angular.module('angular-transitions', ['ui.select2', 'ui.router'])
     value: {
       enter: 'at-view-slide-in-left',
       leave: 'at-view-flip-out-right-opposite'
+    }
+  },
+  {
+    name: 'Scale in',
+    value: {
+      enter: 'at-view-scale-in',
+      leave: 'at-view-fade-out'
     }
   },
   {

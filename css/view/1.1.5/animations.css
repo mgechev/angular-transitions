@@ -17,11 +17,11 @@
   -moz-transition-duration: 0.5s;
   -o-transition-duration: 0.5s;
   transition-duration: 0.5s;
-  -webkit-transform-origin: center center 50%;
-  -moz-transform-origin: center center 50%;
-  -ms-transform-origin: center center 50%;
-  -o-transform-origin: center center 50%;
-  transform-origin: center center 50%;
+  -webkit-transform-origin: center center;
+  -moz-transform-origin: center center;
+  -ms-transform-origin: center center;
+  -o-transform-origin: center center;
+  transform-origin: center center;
   position: absolute;
   top: 0px;
   left: 0px;
@@ -56,11 +56,11 @@
   -moz-transition-duration: 0.5s;
   -o-transition-duration: 0.5s;
   transition-duration: 0.5s;
-  -webkit-transform-origin: center center 50%;
-  -moz-transform-origin: center center 50%;
-  -ms-transform-origin: center center 50%;
-  -o-transform-origin: center center 50%;
-  transform-origin: center center 50%;
+  -webkit-transform-origin: center center;
+  -moz-transform-origin: center center;
+  -ms-transform-origin: center center;
+  -o-transform-origin: center center;
+  transform-origin: center center;
   position: absolute;
   top: 0px;
   left: 0px;
@@ -95,11 +95,11 @@
   -moz-transition-duration: 0.5s;
   -o-transition-duration: 0.5s;
   transition-duration: 0.5s;
-  -webkit-transform-origin: center center 50%;
-  -moz-transform-origin: center center 50%;
-  -ms-transform-origin: center center 50%;
-  -o-transform-origin: center center 50%;
-  transform-origin: center center 50%;
+  -webkit-transform-origin: center center;
+  -moz-transform-origin: center center;
+  -ms-transform-origin: center center;
+  -o-transform-origin: center center;
+  transform-origin: center center;
   position: absolute;
   top: 0px;
   left: 0px;
@@ -134,11 +134,11 @@
   -moz-transition-duration: 0.5s;
   -o-transition-duration: 0.5s;
   transition-duration: 0.5s;
-  -webkit-transform-origin: center center 50%;
-  -moz-transform-origin: center center 50%;
-  -ms-transform-origin: center center 50%;
-  -o-transform-origin: center center 50%;
-  transform-origin: center center 50%;
+  -webkit-transform-origin: center center;
+  -moz-transform-origin: center center;
+  -ms-transform-origin: center center;
+  -o-transform-origin: center center;
+  transform-origin: center center;
   position: absolute;
   top: 0px;
   left: 0px;
@@ -430,11 +430,11 @@
   -moz-transition-duration: 0.5s;
   -o-transition-duration: 0.5s;
   transition-duration: 0.5s;
-  -webkit-transform-origin: 40% 0 0 0 50%;
-  -moz-transform-origin: 40% 0 0 0 50%;
-  -ms-transform-origin: 40% 0 0 0 50%;
-  -o-transform-origin: 40% 0 0 0 50%;
-  transform-origin: 40% 0 0 0 50%;
+  -webkit-transform-origin: 40% 0;
+  -moz-transform-origin: 40% 0;
+  -ms-transform-origin: 40% 0;
+  -o-transform-origin: 40% 0;
+  transform-origin: 40% 0;
   opacity: 1;
   position: absolute;
 }
@@ -468,11 +468,11 @@
   -moz-transition-duration: 0.5s;
   -o-transition-duration: 0.5s;
   transition-duration: 0.5s;
-  -webkit-transform-origin: 100% 50% 0 0 50%;
-  -moz-transform-origin: 100% 50% 0 0 50%;
-  -ms-transform-origin: 100% 50% 0 0 50%;
-  -o-transform-origin: 100% 50% 0 0 50%;
-  transform-origin: 100% 50% 0 0 50%;
+  -webkit-transform-origin: 100% 50%;
+  -moz-transform-origin: 100% 50%;
+  -ms-transform-origin: 100% 50%;
+  -o-transform-origin: 100% 50%;
+  transform-origin: 100% 50%;
   position: absolute;
   top: 0px;
   left: 0px;
@@ -507,11 +507,11 @@
   -moz-transition-duration: 0.5s;
   -o-transition-duration: 0.5s;
   transition-duration: 0.5s;
-  -webkit-transform-origin: 100% 50% 0 0 50%;
-  -moz-transform-origin: 100% 50% 0 0 50%;
-  -ms-transform-origin: 100% 50% 0 0 50%;
-  -o-transform-origin: 100% 50% 0 0 50%;
-  transform-origin: 100% 50% 0 0 50%;
+  -webkit-transform-origin: 100% 50%;
+  -moz-transform-origin: 100% 50%;
+  -ms-transform-origin: 100% 50%;
+  -o-transform-origin: 100% 50%;
+  transform-origin: 100% 50%;
   position: absolute;
   top: 0px;
   left: 0px;
@@ -527,15 +527,15 @@
   opacity: 0;
 }
 
-.at-view-dive-out {
+.at-view-emerge {
   -webkit-transition-property: opacity, -webkit-transform;
   -moz-transition-property: opacity, -moz-transform;
   -o-transition-property: opacity, -o-transform;
   transition-property: opacity transform;
-  -webkit-transition-duration: 0.8s;
-  -moz-transition-duration: 0.8s;
-  -o-transition-duration: 0.8s;
-  transition-duration: 0.8s;
+  -webkit-transition-duration: 0.5s;
+  -moz-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+  transition-duration: 0.5s;
   -webkit-transition-delay: 0.1s;
   -moz-transition-delay: 0.1s;
   -o-transition-delay: 0.1s;
@@ -552,7 +552,7 @@
   left: 0px;
 }
 
-.at-view-dive-out-active {
+.at-view-emerge-active {
   -webkit-transform: rotateX(0deg) translate(0, 0);
   -moz-transform: rotateX(0deg) translate(0, 0);
   -ms-transform: rotateX(0deg) translate(0, 0);
@@ -582,4 +582,35 @@
   -ms-transform: scale(0.1, 0.1);
   -o-transform: scale(0.1, 0.1);
   transform: scale(0.1, 0.1);
+}
+
+.at-view-scale-in {
+  -webkit-transition-property: opacity, -webkit-transform;
+  -moz-transition-property: opacity, -moz-transform;
+  -o-transition-property: opacity, -o-transform;
+  transition-property: opacity, transform;
+  -webkit-transition-duration: 0.5s;
+  -moz-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  -webkit-transform-origin: 50% 50%;
+  -moz-transform-origin: 50% 50%;
+  -ms-transform-origin: 50% 50%;
+  -o-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+  -webkit-transform: scale(0, 0);
+  -moz-transform: scale(0, 0);
+  -ms-transform: scale(0, 0);
+  -o-transform: scale(0, 0);
+  transform: scale(0, 0);
+  opacity: 0;
+}
+
+.at-view-scale-in-active {
+  -webkit-transform: scale(1, 1);
+  -moz-transform: scale(1, 1);
+  -ms-transform: scale(1, 1);
+  -o-transform: scale(1, 1);
+  transform: scale(1, 1);
+  opacity: 1;
 }

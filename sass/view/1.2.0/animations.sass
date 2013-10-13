@@ -270,9 +270,9 @@
 
 
 
-.at-view-dive.ng-leave
+.at-view-emerge.ng-leave
   @include transition-property(opacity transform)
-  @include transition-duration(0.8s)
+  @include transition-duration(0.5s)
   @include transition-delay(0.1s)
   @include transform(rotateX(-60deg) translate(0, 200%))
   opacity: 0
@@ -282,7 +282,7 @@
   left: 0px
 
 
-.at-view-dive.ng-leave-active
+.at-view-emerge.ng-leave-active
   @include transform(rotateX(0deg) translate(0, 0))
   opacity: 1
 
@@ -301,3 +301,18 @@
 
 .at-view-scale.ng-leave-active
   @include scale(0.1)
+
+
+
+
+
+.at-view-scale.ng-enter
+  @include transition-property(opacity, transform)
+  @include transition-duration(0.5s)
+  @include transform-origin(50% 50% 50% 50%)
+  @include scale(0.0)
+  opacity: 0
+
+.at-view-scale.ng-enter-active
+  @include scale(1)
+  opacity: 1

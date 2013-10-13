@@ -6,7 +6,7 @@
   @include backface-visibility(hidden)
   @include transition-property(transform)
   @include transition-duration(.5s)
-  @include transform-origin(center center)
+  @include transform-origin(center, center)
   position: absolute
   top: 0px
   left: 0px
@@ -21,7 +21,7 @@
   @include backface-visibility(hidden)
   @include transition-property(transform)
   @include transition-duration(.5s)
-  @include transform-origin(center center)
+  @include transform-origin(center, center)
   position: absolute
   top: 0px
   left: 0px
@@ -39,7 +39,7 @@
   @include backface-visibility(hidden)
   @include transition-property(transform)
   @include transition-duration(.5s)
-  @include transform-origin(center center)
+  @include transform-origin(center, center)
   position: absolute
   top: 0px
   left: 0px
@@ -54,7 +54,7 @@
   @include backface-visibility(hidden)
   @include transition-property(transform)
   @include transition-duration(.5s)
-  @include transform-origin(center center)
+  @include transform-origin(center, center)
   position: absolute
   top: 0px
   left: 0px
@@ -212,7 +212,7 @@
 .at-view-rotate-fade-out
   @include transition-property(transform, opacity)
   @include transition-duration(.5s)
-  @include transform-origin(40% 0 0 0)
+  @include transform-origin(40%, 0)
   opacity: 1
   position: absolute
 
@@ -231,7 +231,7 @@
   @include backface-visibility(hidden)
   @include transition-property(transform, opacity)
   @include transition-duration(.5s)
-  @include transform-origin(100% 50% 0 0)
+  @include transform-origin(100%, 50%)
   position: absolute
   top: 0px
   left: 0px
@@ -252,7 +252,7 @@
   @include backface-visibility(hidden)
   @include transition-property(transform, opacity)
   @include transition-duration(.5s)
-  @include transform-origin(100% 50% 0 0)
+  @include transform-origin(100%, 50% )
   position: absolute
   top: 0px
   left: 0px
@@ -268,9 +268,9 @@
 
 
 
-.at-view-dive-out
+.at-view-emerge
   @include transition-property(opacity transform)
-  @include transition-duration(0.8s)
+  @include transition-duration(0.5s)
   @include transition-delay(0.1s)
   @include transform(rotateX(-60deg) translate(0, 200%))
   opacity: 0
@@ -280,7 +280,7 @@
   left: 0px
 
 
-.at-view-dive-out-active
+.at-view-emerge-active
   @include transform(rotateX(0deg) translate(0, 0))
   opacity: 1
 
@@ -299,3 +299,16 @@
 
 .at-view-scale-out-active
   @include scale(0.1)
+
+
+
+.at-view-scale-in
+  @include transition-property(opacity, transform)
+  @include transition-duration(0.5s)
+  @include transform-origin(50%, 50%)
+  @include scale(0.0)
+  opacity: 0
+
+.at-view-scale-in-active
+  @include scale(1)
+  opacity: 1

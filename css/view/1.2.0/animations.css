@@ -527,15 +527,15 @@
   opacity: 0;
 }
 
-.at-view-dive.ng-leave {
+.at-view-emerge.ng-leave {
   -webkit-transition-property: opacity, -webkit-transform;
   -moz-transition-property: opacity, -moz-transform;
   -o-transition-property: opacity, -o-transform;
   transition-property: opacity transform;
-  -webkit-transition-duration: 0.8s;
-  -moz-transition-duration: 0.8s;
-  -o-transition-duration: 0.8s;
-  transition-duration: 0.8s;
+  -webkit-transition-duration: 0.5s;
+  -moz-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+  transition-duration: 0.5s;
   -webkit-transition-delay: 0.1s;
   -moz-transition-delay: 0.1s;
   -o-transition-delay: 0.1s;
@@ -552,7 +552,7 @@
   left: 0px;
 }
 
-.at-view-dive.ng-leave-active {
+.at-view-emerge.ng-leave-active {
   -webkit-transform: rotateX(0deg) translate(0, 0);
   -moz-transform: rotateX(0deg) translate(0, 0);
   -ms-transform: rotateX(0deg) translate(0, 0);
@@ -582,4 +582,35 @@
   -ms-transform: scale(0.1, 0.1);
   -o-transform: scale(0.1, 0.1);
   transform: scale(0.1, 0.1);
+}
+
+.at-view-scale.ng-enter {
+  -webkit-transition-property: opacity, -webkit-transform;
+  -moz-transition-property: opacity, -moz-transform;
+  -o-transition-property: opacity, -o-transform;
+  transition-property: opacity, transform;
+  -webkit-transition-duration: 0.5s;
+  -moz-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  -webkit-transform-origin: 50% 50% 50% 50% 50%;
+  -moz-transform-origin: 50% 50% 50% 50% 50%;
+  -ms-transform-origin: 50% 50% 50% 50% 50%;
+  -o-transform-origin: 50% 50% 50% 50% 50%;
+  transform-origin: 50% 50% 50% 50% 50%;
+  -webkit-transform: scale(0, 0);
+  -moz-transform: scale(0, 0);
+  -ms-transform: scale(0, 0);
+  -o-transform: scale(0, 0);
+  transform: scale(0, 0);
+  opacity: 0;
+}
+
+.at-view-scale.ng-enter-active {
+  -webkit-transform: scale(1, 1);
+  -moz-transform: scale(1, 1);
+  -ms-transform: scale(1, 1);
+  -o-transform: scale(1, 1);
+  transform: scale(1, 1);
+  opacity: 1;
 }
