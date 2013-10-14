@@ -8,3 +8,11 @@ This repository contains a set of pre-defined AngularJS animations which you can
 You can see a **[demo here](http://angular-transitions.mgechev.com/)**.
 
 Some of the animations are inspired by [scroll.js](http://lab.hakim.se/scroll-effects/).
+
+##Contribute
+
+Contributions are greatly appreciated! How you I help? There are few things which should be improved:
+
+* Optimization of the CSS
+* Including new animations
+* Support for v1.1.4
