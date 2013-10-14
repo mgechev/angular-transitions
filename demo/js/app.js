@@ -12,7 +12,10 @@ angular.module('angular-transitions', ['ui.select2', 'ui.router'])
       'view': ['http://localhost:8000/css/view/1.1.5/animations.css', 'http://localhost:8000/css/view/1.2.0/animations.css'],
       'repeat': ['http://localhost:8000/css/repeat/1.1.5/animations.css', 'http://localhost:8000/css/repeat/1.2.0/animations.css']
     },
-    selectedStyle;
+    selectedStyle,
+    loaded = [false, false];
+
+  $scope.loading = true;
   $scope.$on('$stateChangeSuccess', function (e, state) {
     $scope.currentState = state.name;
   });
@@ -24,14 +27,22 @@ angular.module('angular-transitions', ['ui.select2', 'ui.router'])
         styles = pageStyleMap[view];
     Stylesheet(styles[0]).then(function (s) {
       $scope.v115Rules = CSSParser.extractStyle([selectedStyle.enter, selectedStyle.leave], CSSParser.parse(s));
+      loaded[0] = true;
+      if (loaded[1]) $scope.loading = false;
     });
     Stylesheet(styles[1]).then(function (s) {
       console.log([selectedStyle.enter, selectedStyle.leave]);
       $scope.v120Rules = CSSParser.extractStyle([selectedStyle.enter, selectedStyle.leave], CSSParser.parse(s));
+      loaded[1] = true;
+      if (loaded[0]) $scope.loading = false;
     });
   };
   $scope.setSelectedStyle = function (style) {
     selectedStyle = JSON.parse(style);
+  };
+  $scope.dialogClosed = function () {
+    loaded = [false, false];
+    $scope.loading = false;
   };
 })
 .controller('ViewAnimationsCtrl', function ($scope, $location) {
