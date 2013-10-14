@@ -527,7 +527,7 @@
   opacity: 0;
 }
 
-.at-view-emerge.ng-leave {
+.at-view-emerge.ng-enter {
   -webkit-transition-property: opacity, -webkit-transform;
   -moz-transition-property: opacity, -moz-transform;
   -o-transition-property: opacity, -o-transform;
@@ -552,7 +552,7 @@
   left: 0px;
 }
 
-.at-view-emerge.ng-leave-active {
+.at-view-emerge.ng-enter-active {
   -webkit-transform: rotateX(0deg) translate(0, 0);
   -moz-transform: rotateX(0deg) translate(0, 0);
   -ms-transform: rotateX(0deg) translate(0, 0);

@@ -42,8 +42,38 @@
 		        		</thead>
 		        		<tbody>
 		        			<tr>
-		        				<td><textarea at-selectable name="" id="" cols="30" rows="10" ng-bind="v115Rules"></textarea></td>
-		        				<td><textarea at-selectable name="" id="" cols="30" rows="10" ng-bind="v120Rules"></textarea></td>
+		        				<td>
+		        					<textarea at-selectable name="" id="" cols="37" rows="10" ng-bind="v115Rules"></textarea>
+		        				</td>
+		        				<td>
+		        					<textarea at-selectable name="" id="" cols="37" rows="10" ng-bind="v120Rules"></textarea>
+		        				</td>
+		        			</tr>
+		        			<tr>
+		        				<td colspan="2">
+		        					<h4>Usage (v1.1.5)</h4>
+		        					<pre><code>
+&lt;div
+  ng-animate=&quot;{
+  enter: '{{selectedStyle.enter}}',
+  leave: '{{selectedStyle.leave}}'
+}&quot;&gt;&lt;/div&gt;
+		        					</code></pre>
+		        				</td>
+	        				<tr>
+	        				</tr>
+		        				<td colspan="2">
+		        					<h4>Usage (v1.2.0)</h4>
+		        					<pre><code>
+&lt;div
+  class=&quot;{{selectedStyle.enter}}
+         {{selectedStyle.leave}}&quot;&gt;
+&lt;/div&gt;
+		        					</code></pre>
+		        				</td>
+		        			</tr>
+		        			<tr>
+		        				<td colspan="2">For further details check the AngularJS <a href="http://docs.angularjs.org" target="_blank">documentation.</a></td>
 		        			</tr>
 		        		</tbody>
 		        	</table>
