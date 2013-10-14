@@ -7,11 +7,32 @@ angular.module('angular-transitions', ['ui.select2', 'ui.router'])
   .state('view.page2', { url: '/page2', templateUrl: './partials/view/page2.html' })
   .state('repeat', { controller: 'RepeatAnimationsCtrl', url: '/repeat', templateUrl: './partials/repeat/main.html' });
 })
-.controller('MainCtrl', function ($scope) {
-  $scope.currentState = '';
+.controller('MainCtrl', function ($scope, $state, Stylesheet, CSSParser) {
+  var pageStyleMap = {
+      'view': ['http://localhost:8000/css/view/1.1.5/animations.css', 'http://localhost:8000/css/view/1.2.0/animations.css'],
+      'repeat': ['http://localhost:8000/css/repeat/1.1.5/animations.css', 'http://localhost:8000/css/repeat/1.2.0/animations.css']
+    },
+    selectedStyle;
   $scope.$on('$stateChangeSuccess', function (e, state) {
     $scope.currentState = state.name;
   });
+  function getViewName(state) {
+    return (state.name.indexOf('view') >= 0) ? 'view' : 'repeat';
+  }
+  $scope.showCSS = function (name, type) {
+    var view = getViewName($state.current),
+        styles = pageStyleMap[view];
+    Stylesheet(styles[0]).then(function (s) {
+      $scope.v115Rules = CSSParser.extractStyle([selectedStyle.enter, selectedStyle.leave], CSSParser.parse(s));
+    });
+    Stylesheet(styles[1]).then(function (s) {
+      console.log([selectedStyle.enter, selectedStyle.leave]);
+      $scope.v120Rules = CSSParser.extractStyle([selectedStyle.enter, selectedStyle.leave], CSSParser.parse(s));
+    });
+  };
+  $scope.setSelectedStyle = function (style) {
+    selectedStyle = JSON.parse(style);
+  };
 })
 .controller('ViewAnimationsCtrl', function ($scope, $location) {
   var animations = [{
@@ -108,6 +129,9 @@ angular.module('angular-transitions', ['ui.select2', 'ui.router'])
 
   $scope.animations = animations;
   $scope.current = angular.toJson(animations[0].value);
+  $scope.$watch('current', function (v) {
+    $scope.setSelectedStyle(v);
+  });
   $scope.getAnimation = function () {
     return angular.fromJson($scope.current);
   };
@@ -198,8 +222,11 @@ angular.module('angular-transitions', ['ui.select2', 'ui.router'])
 
   $scope.animations = animations;
   $scope.current = angular.toJson(animations[0].value);
-
+  $scope.$watch('current', function (v) {
+    $scope.setSelectedStyle(v);
+  });
   $scope.getAnimation = function () {
+    $scope.setSelectedStyle($scope.current);
     return angular.fromJson($scope.current);
   };
 
@@ -211,5 +238,58 @@ angular.module('angular-transitions', ['ui.select2', 'ui.router'])
   $scope.addItem = function () {
     if (removed.length)
       $scope.collection.push(removed.pop());
+  };
+})
+.factory('Stylesheet', function ($q, $http) {
+  var cache = {};
+  return function (url) {
+    var deferred = $q.defer();
+    if (cache[url]) {
+      deferred.resolve(cache[url]);
+    } else {
+      $http.get(url)
+      .then(function (data) {
+        data = data.data;
+        cache[url] = data;
+        deferred.resolve(data);
+      }, function () {
+        deferred.reject();
+      });
+    }
+    return deferred.promise;
+  };
+})
+.factory('CSSParser', function () {
+  return {
+    parse: function (input) {
+      var parser = new CSSParser();
+      return parser.parse(input, false, false);
+    },
+    extractStyle: function (names, data) {
+      var result = null;
+      if (data) {
+        data.cssRules.forEach(function (r) {
+          names.forEach(function (name) {
+            if (r.mSelectorText.indexOf(name) >= 0) {
+              result = result || '';
+              result += r.parsedCssText;
+            }
+          });
+        });
+      }
+      return result;
+    }
+  };
+})
+.directive('atSelectable', function () {
+  return function (scope, el) {
+    $(el).focus(function () {
+      var $this = $(this);
+      $this.select();
+      $this.mouseup(function() {
+        $this.unbind("mouseup");
+        return false;
+      });
+    });
   };
 });

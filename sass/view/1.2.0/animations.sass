@@ -1,7 +1,7 @@
 @import "compass/css3/transform"
 @import "compass/css3/transition"
 
-.at-view-flip-horizontal.ng-leave
+.at-view-flip-out-horizontal.ng-leave
   @include rotateX(0deg)
   @include backface-visibility(hidden)
   @include transition-property(transform)
@@ -12,11 +12,11 @@
   left: 0px
   z-index: 20
 
-.at-view-flip-horizontal.ng-leave-active
+.at-view-flip-out-horizontal.ng-leave-active
   @include rotateX(180deg)
   z-index: 10
 
-.at-view-flip-horizontal.ng-enter
+.at-view-flip-in-horizontal.ng-enter
   @include rotateX(-180deg)
   @include backface-visibility(hidden)
   @include transition-property(transform)
@@ -27,14 +27,14 @@
   left: 0px
   z-index: 10
 
-.at-view-flip-horizontal.ng-enter-active
+.at-view-flip-in-horizontal.ng-enter-active
   @include rotateX(0deg)
   z-index: 20
 
 
 
 
-.at-view-flip-vertical.ng-leave
+.at-view-flip-out-vertical.ng-leave
   @include rotateY(0deg)
   @include backface-visibility(hidden)
   @include transition-property(transform)
@@ -45,11 +45,11 @@
   left: 0px
   z-index: 20
 
-.at-view-flip-vertical.ng-leave-active
+.at-view-flip-out-vertical.ng-leave-active
   @include rotateY(180deg)
   z-index: 10
 
-.at-view-flip-vertical.ng-enter
+.at-view-flip-in-vertical.ng-enter
   @include rotateY(-180deg)
   @include backface-visibility(hidden)
   @include transition-property(transform)
@@ -60,14 +60,14 @@
   left: 0px
   z-index: 10
 
-.at-view-flip-vertical.ng-enter-active
+.at-view-flip-in-vertical.ng-enter-active
   @include rotateX(0deg)
   z-index: 20
 
 
 
 
-.at-view-fade.ng-enter
+.at-view-fade-in.ng-enter
   @include transition-property(opacity)
   @include transition-duration(0.5s)
   position: absolute
@@ -75,11 +75,11 @@
   left: 0px
   opacity: 0
 
-.at-view-fade.ng-enter-active
+.at-view-fade-in.ng-enter-active
   opacity: 1
 
 
-.at-view-fade.ng-leave
+.at-view-fade-out.ng-leave
   @include transition-property(opacity)
   @include transition-duration(0.5s)
   position: absolute
@@ -87,14 +87,14 @@
   left: 0px
   opacity: 1
 
-.at-view-fade.ng-leave-active
+.at-view-fade-out.ng-leave-active
   opacity: 0
 
 
 
 
 
-.at-view-slide-left.ng-leave
+.at-view-slide-out-left.ng-leave
   @include transition-property(transform, opacity)
   @include transition-duration(.5s)
   @include translate(0px, 0px)
@@ -102,12 +102,12 @@
   z-index: 3
   position: absolute
 
-.at-view-slide-left.ng-leave-active
+.at-view-slide-out-left.ng-leave-active
   @include translate(-100%, 0px)
   opacity: 0
   position: absolute
 
-.at-view-slide-left.ng-enter
+.at-view-slide-in-left.ng-enter
   @include transition-property(transform, opacity)
   @include transition-duration(.5s)
   @include translate(-100%, 0px)
@@ -115,7 +115,7 @@
   z-index: 1
   position: absolute
 
-.at-view-slide-left.ng-enter-active
+.at-view-slide-in-left.ng-enter-active
   @include translate(0px, 0px)
   opacity: 1
   position: absolute
@@ -124,7 +124,7 @@
 
 
 
-.at-view-slide-right.ng-enter
+.at-view-slide-in-right.ng-enter
   @include transition-property(transform, opacity)
   @include transition-duration(.5s)
   @include translate(100%, 0px)
@@ -132,12 +132,12 @@
   z-index: 1
   position: absolute
 
-.at-view-slide-right.ng-enter-active
+.at-view-slide-in-right.ng-enter-active
   @include translate(0px, 0px)
   opacity: 1
   position: absolute
 
-.at-view-slide-right.ng-leave
+.at-view-slide-out-right.ng-leave
   @include transition-property(transform, opacity)
   @include transition-duration(.5s)
   @include translate(0px, 0px)
@@ -145,14 +145,14 @@
   z-index: 3
   position: absolute
 
-.at-view-slide-right.ng-leave-active
+.at-view-slide-out-right.ng-leave-active
   @include translate(100%, 0px)
   opacity: 0
 
 
 
 
-.at-view-slide-top.ng-enter
+.at-view-slide-in-top.ng-enter
   @include transition-property(transform, opacity)
   @include transition-duration(.5s)
   @include translate(0px, -100%)
@@ -160,12 +160,12 @@
   z-index: 1
   position: absolute
 
-.at-view-slide-top.ng-enter-active
+.at-view-slide-in-top.ng-enter-active
   @include translate(0px, 0px)
   opacity: 1
   position: absolute
 
-.at-view-slide-top.ng-leave
+.at-view-slide-out-top.ng-leave
   @include transition-property(transform, opacity)
   @include transition-duration(.5s)
   @include translate(0px, 0px)
@@ -173,14 +173,14 @@
   z-index: 3
   position: absolute
 
-.at-view-slide-top.ng-leave-active
+.at-view-slide-out-top.ng-leave-active
   @include translate(0px, -100%)
   opacity: 0
 
 
 
 
-.at-view-slide-bottom.ng-enter
+.at-view-slide-in-bottom.ng-enter
   @include transition-property(transform, opacity)
   @include transition-duration(.5s)
   @include translate(0px, 100%)
@@ -188,12 +188,12 @@
   z-index: 1
   position: absolute
 
-.at-view-slide-bottom.ng-enter-active
+.at-view-slide-in-bottom.ng-enter-active
   @include translate(0px, 0px)
   opacity: 1
   position: absolute
 
-.at-view-slide-bottom.ng-leave
+.at-view-slide-out-bottom.ng-leave
   @include transition-property(transform, opacity)
   @include transition-duration(.5s)
   @include translate(0px, 0px)
@@ -201,7 +201,7 @@
   z-index: 3
   position: absolute
 
-.at-view-slide-bottom.ng-leave-active
+.at-view-slide-out-bottom.ng-leave-active
   @include translate(0px, 100%)
   opacity: 0
 
@@ -211,14 +211,14 @@
 
 
 
-.at-view-rotate-fade.ng-leave
+.at-view-rotate-fade-out.ng-leave
   @include transition-property(transform, opacity)
   @include transition-duration(.5s)
   @include transform-origin(40%, 0)
   opacity: 1
   position: absolute
 
-.at-view-rotate-fade.ng-leave-active
+.at-view-rotate-fade-out.ng-leave-active
   @include rotateZ(90deg)
   opacity: 0
   position: absolute
@@ -228,7 +228,7 @@
 
 
 
-.at-view-flip-right.ng-leave
+.at-view-flip-out-right.ng-leave
   @include rotateY(0deg)
   @include backface-visibility(hidden)
   @include transition-property(transform, opacity)
@@ -239,7 +239,7 @@
   left: 0px
   opacity: 1
 
-.at-view-flip-right.ng-leave-active
+.at-view-flip-out-right.ng-leave-active
   @include rotateY(90deg)
   opacity: 0
 
@@ -249,7 +249,7 @@
 
 
 
-.at-view-flip-right-opposite.ng-leave
+.at-view-flip-out-right-opposite.ng-leave
   @include rotateY(0deg)
   @include backface-visibility(hidden)
   @include transition-property(transform, opacity)
@@ -260,7 +260,7 @@
   left: 0px
   opacity: 1
 
-.at-view-flip-right-opposite.ng-leave-active
+.at-view-flip-out-right-opposite.ng-leave-active
   @include rotateY(-90deg)
   opacity: 0
 
@@ -291,7 +291,7 @@
 
 
 
-.at-view-scale.ng-leave
+.at-view-scale-out.ng-leave
   @include transition-property(transform)
   @include transition-duration(0.5s)
   position: absolute
@@ -299,20 +299,20 @@
   left: 0px
   z-index: 2
 
-.at-view-scale.ng-leave-active
+.at-view-scale-out.ng-leave-active
   @include scale(0.1)
 
 
 
 
 
-.at-view-scale.ng-enter
+.at-view-scale-in.ng-enter
   @include transition-property(opacity, transform)
   @include transition-duration(0.5s)
   @include transform-origin(50%, 50%)
   @include scale(0.0)
   opacity: 0
 
-.at-view-scale.ng-enter-active
+.at-view-scale-in.ng-enter-active
   @include scale(1)
   opacity: 1
