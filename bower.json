@@ -21,6 +21,7 @@
     "angular-ui-select2": "~0.0.2",
     "select2": "~3.4.3",
 		"angular-ui-router": "0.2.0",
-    "css-parser": "http://sources.disruptive-innovations.com/jscssp/trunk/cssParser.js"
+    "css-parser": "http://sources.disruptive-innovations.com/jscssp/trunk/cssParser.js",
+    "cssbeautify": "https://raw.github.com/senchalabs/cssbeautify/master/cssbeautify.js"
 	}
 }
