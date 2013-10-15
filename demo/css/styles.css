@@ -31,3 +31,7 @@ body {
     padding-top: 15px;
     padding-bottom: 15px;
 }
+
+textarea {
+    resize: none;
+}

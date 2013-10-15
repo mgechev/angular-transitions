@@ -13,6 +13,6 @@ Some of the animations are inspired by [scroll.js](http://lab.hakim.se/scroll-ef
 
 Contributions are greatly appreciated! How you I help? There are few things which should be improved:
 
-* Optimization of the CSS
-* Including new animations
-* Support for v1.1.4
+* Optimize the CSS
+* Including new awesome animations!
+* Include support for v1.1.4

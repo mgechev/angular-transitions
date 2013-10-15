@@ -9,8 +9,8 @@ angular.module('angular-transitions', ['ui.select2', 'ui.router'])
 })
 .controller('MainCtrl', function ($scope, $state, Stylesheet, CSSParser) {
   var pageStyleMap = {
-      'view': ['http://localhost:8000/css/view/1.1.5/animations.css', 'http://localhost:8000/css/view/1.2.0/animations.css'],
-      'repeat': ['http://localhost:8000/css/repeat/1.1.5/animations.css', 'http://localhost:8000/css/repeat/1.2.0/animations.css']
+      'view': ['./css/view/1.1.5/animations.css', './css/view/1.2.0/animations.css'],
+      'repeat': ['./css/repeat/1.1.5/animations.css', './css/repeat/1.2.0/animations.css']
     },
     loaded = [false, false];
 
@@ -25,13 +25,13 @@ angular.module('angular-transitions', ['ui.select2', 'ui.router'])
   $scope.showCSS = function (name, type) {
     var view = getViewName($state.current),
         styles = pageStyleMap[view];
+    $scope.resetDialog();
     Stylesheet(styles[0]).then(function (s) {
       $scope.v115Rules = cssbeautify(CSSParser.extractStyle([$scope.selectedStyle.enter, $scope.selectedStyle.leave], CSSParser.parse(s)));
       loaded[0] = true;
       if (loaded[1]) $scope.loading = false;
     });
     Stylesheet(styles[1]).then(function (s) {
-      console.log([$scope.selectedStyle.enter, $scope.selectedStyle.leave]);
       $scope.v120Rules = cssbeautify(CSSParser.extractStyle([$scope.selectedStyle.enter, $scope.selectedStyle.leave], CSSParser.parse(s)));
       loaded[1] = true;
       if (loaded[0]) $scope.loading = false;
@@ -40,9 +40,9 @@ angular.module('angular-transitions', ['ui.select2', 'ui.router'])
   $scope.setSelectedStyle = function (style) {
     $scope.selectedStyle = JSON.parse(style);
   };
-  $scope.dialogClosed = function () {
+  $scope.resetDialog = function () {
     loaded = [false, false];
-    $scope.loading = false;
+    $scope.loading = true;
   };
 })
 .controller('ViewAnimationsCtrl', function ($scope, $location) {
@@ -154,7 +154,7 @@ angular.module('angular-transitions', ['ui.select2', 'ui.router'])
   };
 })
 .controller('RepeatAnimationsCtrl', function ($scope) {
-  // Et his contentiones consectetuer conclusionemque.
+
   $scope.collection = [
     'Copiosae',
     'Eloquentiam',
@@ -165,7 +165,6 @@ angular.module('angular-transitions', ['ui.select2', 'ui.router'])
     'Contentiones',
     'Cituperata'
   ];
-
 
   var animations = [{
     name: 'Wave',
