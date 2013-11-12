@@ -1,5 +1,6 @@
 angular.module('angular-transitions', ['ui.select2', 'ui.router'])
 .config(function ($stateProvider, $urlRouterProvider) {
+  'use strict';
   $urlRouterProvider.otherwise('/view/page1');
   $stateProvider
   .state('view', { controller: 'ViewAnimationsCtrl', url: '/view', templateUrl: './partials/view/main.html' })
@@ -8,9 +9,10 @@ angular.module('angular-transitions', ['ui.select2', 'ui.router'])
   .state('repeat', { controller: 'RepeatAnimationsCtrl', url: '/repeat', templateUrl: './partials/repeat/main.html' });
 })
 .controller('MainCtrl', function ($scope, $state, Stylesheet, CSSParser) {
+  'use strict';
   var pageStyleMap = {
-      'view': ['./css/view/1.1.5/animations.css', './css/view/1.2.0/animations.css'],
-      'repeat': ['./css/repeat/1.1.5/animations.css', './css/repeat/1.2.0/animations.css']
+      'view': ['http://localhost:8000/css/view/1.1.5/animations.css', 'http://localhost:8000/css/view/1.2.0/animations.css'],
+      'repeat': ['http://localhost:8000/css/repeat/1.1.5/animations.css', 'http://localhost:8000/css/repeat/1.2.0/animations.css']
     },
     loaded = [false, false];
 
@@ -22,19 +24,23 @@ angular.module('angular-transitions', ['ui.select2', 'ui.router'])
   function getViewName(state) {
     return (state.name.indexOf('view') >= 0) ? 'view' : 'repeat';
   }
-  $scope.showCSS = function (name, type) {
+  $scope.showCSS = function () {
     var view = getViewName($state.current),
         styles = pageStyleMap[view];
     $scope.resetDialog();
     Stylesheet(styles[0]).then(function (s) {
       $scope.v115Rules = cssbeautify(CSSParser.extractStyle([$scope.selectedStyle.enter, $scope.selectedStyle.leave], CSSParser.parse(s)));
       loaded[0] = true;
-      if (loaded[1]) $scope.loading = false;
+      if (loaded[1]) {
+        $scope.loading = false;
+      }
     });
     Stylesheet(styles[1]).then(function (s) {
       $scope.v120Rules = cssbeautify(CSSParser.extractStyle([$scope.selectedStyle.enter, $scope.selectedStyle.leave], CSSParser.parse(s)));
       loaded[1] = true;
-      if (loaded[0]) $scope.loading = false;
+      if (loaded[0]) {
+        $scope.loading = false;
+      }
     });
   };
   $scope.setSelectedStyle = function (style) {
@@ -46,6 +52,7 @@ angular.module('angular-transitions', ['ui.select2', 'ui.router'])
   };
 })
 .controller('ViewAnimationsCtrl', function ($scope, $location) {
+  'use strict';
   var animations = [{
     name: 'Vertical flip',
     value: {
@@ -154,7 +161,7 @@ angular.module('angular-transitions', ['ui.select2', 'ui.router'])
   };
 })
 .controller('RepeatAnimationsCtrl', function ($scope) {
-
+  'use strict';
   $scope.collection = [
     'Copiosae',
     'Eloquentiam',
@@ -242,34 +249,34 @@ angular.module('angular-transitions', ['ui.select2', 'ui.router'])
 
   var removed = [];
   $scope.removeItem = function () {
-    if ($scope.collection.length)
+    if ($scope.collection.length) {
       removed.push($scope.collection.pop());
+    }
   };
   $scope.addItem = function () {
-    if (removed.length)
+    if (removed.length) {
       $scope.collection.push(removed.pop());
+    }
   };
 })
 .factory('Stylesheet', function ($q, $http) {
+  'use strict';
   var cache = {};
   return function (url) {
-    var deferred = $q.defer();
     if (cache[url]) {
-      deferred.resolve(cache[url]);
+      return $q.when(cache[url]);
     } else {
-      $http.get(url)
+      return $http.get(url)
       .then(function (data) {
         data = data.data;
         cache[url] = data;
-        deferred.resolve(data);
-      }, function () {
-        deferred.reject();
+        return data;
       });
     }
-    return deferred.promise;
   };
 })
 .factory('CSSParser', function () {
+  'use strict';
   return {
     parse: function (input) {
       var parser = new CSSParser();
@@ -292,12 +299,13 @@ angular.module('angular-transitions', ['ui.select2', 'ui.router'])
   };
 })
 .directive('atSelectable', function () {
+  'use strict';
   return function (scope, el) {
     $(el).focus(function () {
       var $this = $(this);
       $this.select();
-      $this.mouseup(function() {
-        $this.unbind("mouseup");
+      $this.mouseup(function () {
+        $this.unbind('mouseup');
         return false;
       });
     });
